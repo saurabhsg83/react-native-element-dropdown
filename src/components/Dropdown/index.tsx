@@ -50,6 +50,7 @@ const DropdownComponent: <T>(
       placeholderStyle,
       selectedTextStyle,
       itemContainerStyle,
+      itemTextContainerStyle,
       itemTextStyle,
       inputSearchStyle,
       iconStyle,
@@ -60,6 +61,7 @@ const DropdownComponent: <T>(
       searchField,
       value,
       activeColor = '#F6F7F8',
+      activeTextColor = '#000000',
       fontFamily,
       iconColor = 'gray',
       searchPlaceholder,
@@ -429,12 +431,18 @@ const DropdownComponent: <T>(
               {renderItem ? (
                 renderItem(item, selected)
               ) : (
-                <View style={styles.item}>
+                <View style={StyleSheet.flatten([
+                  styles.item,
+                  itemTextContainerStyle
+                ])}>
                   <Text
                     style={StyleSheet.flatten([
                       styles.textItem,
                       itemTextStyle,
                       font(),
+                      selected && {
+                        color: activeTextColor,
+                      },
                     ])}
                   >
                     {_.get(item, labelField)}

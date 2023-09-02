@@ -26,6 +26,7 @@ export interface DropdownProps<T> {
   selectedTextStyle?: StyleProp<TextStyle>;
   selectedTextProps?: TextProps;
   itemContainerStyle?: StyleProp<ViewStyle>;
+  itemTextContainerStyle?: StyleProp<ViewStyle>;
   itemTextStyle?: StyleProp<TextStyle>;
   inputSearchStyle?: StyleProp<TextStyle>;
   iconStyle?: StyleProp<ImageStyle>;
@@ -34,6 +35,7 @@ export interface DropdownProps<T> {
   fontFamily?: string;
   iconColor?: string;
   activeColor?: string;
+  activeTextColor?: string;
   data: T[];
   value?: T | string | null | undefined;
   placeholder?: string;
